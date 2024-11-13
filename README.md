@@ -47,8 +47,8 @@ Hi, my name is Kamshia Kaleendrarajan. I am a part-time student at Bern Universi
 1. **Online-Version**: View the portfolio directly [hier](URL).
 2. **Local Installation**:
    ```bash
-   git clone https://github.com/dein_username/dein_portfolio.git
-   cd dein_portfolio
+   git clone https://github.com/kamshia7/portfolio-page-EWEB-KK.git
+   cd portfolio-page-EWEB-KK
    npm install
    npm start
    ```
