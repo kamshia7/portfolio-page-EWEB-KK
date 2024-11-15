@@ -44,7 +44,7 @@ Hi, my name is Kamshia Kaleendrarajan. I am a part-time student at Bern Universi
 
 ### 💻 How to Access the Portfolio
 
-1. **Online-Version**: View the portfolio directly [hier](URL).
+1. **Online-Version**: View the portfolio directly [hier](https://kamshia7.github.io/portfolio-page-EWEB-KK/).
 2. **Local Installation**:
    ```bash
    git clone https://github.com/kamshia7/portfolio-page-EWEB-KK.git
