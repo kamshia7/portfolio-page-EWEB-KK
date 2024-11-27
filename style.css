@@ -1,0 +1,48 @@
+/* Allgemeine Stile */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+@media (max-width: 500px) {
+  .responsive-img {
+    max-width: 100%;
+  }
+}
+
+.responsive-img {
+  width: 100%;
+  max-width: 500px; /* Maximale Breite des Bildes */
+  height: auto; /* Seitenverhältnis beibehalten */
+}
+
+/* Kreisförmiger Container */
+.circle {
+  width: 200px; /* Breite des Kreises */
+  height: 200px; /* Höhe des Kreises */
+  border-radius: 50%; /* 50% macht den Kreis */
+  overflow: hidden; /* Bild bleibt innerhalb des Containers */
+}
+
+/* Ovaler Container */
+.oval {
+  width: 150px; /* Breite des Ovals */
+  height: 200px; /* Höhe des Ovals */
+  border-radius: 50%; /* Rundung für die ovale Form */
+  overflow: hidden;
+}
+
+/* Bild-Stile */
+.circle img,
+.oval img {
+  width: 100%; /* Bild füllt den Container aus */
+  height: 100%; /* Verhindert Verzerrungen */
+  object-fit: cover; /* Das Bild bleibt proportional */
+}
