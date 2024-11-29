@@ -20,7 +20,18 @@ section {
 }
 
 .main-box {
-  text-align: right;
+  text-align: left;
+  padding: 1rem;
+  background-color: #ca6969;
+  color: #333;
+  align-items: left;
+}
+
+#text-box {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6; /* Abstand zwischen Zeilen */
+  margin-bottom: 15px;
 }
 
 #projects {
@@ -54,7 +65,15 @@ h2 {
   font-family: "Times New Roman", Times, serif;
   font-size: 2rem;
   font-weight: bold;
-  color: #ca6969;
+  color: #f3ebd6;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-family: Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
   margin-bottom: 10px;
 }
 
