@@ -1,0 +1,3 @@
+# Gitignore file
+# Secrets und lokale Umgebungen nicht tracken
+.env
