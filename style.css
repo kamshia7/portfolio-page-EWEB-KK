@@ -19,6 +19,10 @@ section {
   margin: 2rem;
 }
 
+.main-box {
+  text-align: right;
+}
+
 #projects {
   display: flex;
   flex-wrap: wrap;
