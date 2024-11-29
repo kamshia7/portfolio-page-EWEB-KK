@@ -1,3 +1,5 @@
+const apiKey = process.env.KURAL_API_KEY; // Funktioniert nur mit Backend-Umgebungen
+
 // Wait for the DOM to load
 document.addEventListener("DOMContentLoaded", () => {
   const apiUrl = "https://getthirukural.appspot.com/api/3.0/kural/";
