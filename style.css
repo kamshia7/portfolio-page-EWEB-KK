@@ -5,6 +5,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f3ebd6;
+  color: #666;
 }
 
 header {
@@ -87,7 +88,9 @@ p {
 
 .button-style {
   font-family: Arial, sans-serif;
-  font-size: 0.75 rem;
+  font-size: 1rem;
+  border: #666;
+  border-radius: 1rem;
   background-color: #f3ebd6;
 }
 

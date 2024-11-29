@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Kamshia Kaleendrarajan</title>
-    <link rel="stylesheet" href="style.css" />
-    <!-- Verlinkt die CSS-Datei -->
+    <link rel="stylesheet" href="style.css" /> <!-- Verlinkt die CSS-Datei -->
+    <script src="script.js"></script>
   </head>
   <body>
     <!--Title-->
@@ -36,8 +36,17 @@
     <!-- My Career and Education-->
      <section>
       <div>
-        <h1>My Career Path</h1></div>
-      <div><h1>My Education</h1></div>
+        <div><h1>My Career Path</h1></div>
+        <div>Praktikum</div>
+        <div>Dokumenten- und Informationsmanagement</div>
+        <div>Sachbearbeiterin Bundesratsgeschäfte</div>
+      </div>
+      <div>
+        <div><h1>My Education</h1></div>
+        <div>KV EFZ & BM an der WMS Biel</div>
+        <div>BSc BWL an der ZHAW</div>
+        <div>BSc Wirtschaftsinformatik bei der BFH</div>
+      </div>
      </section>
      <!--API Sections-->
      <!--Books-->
@@ -52,6 +61,19 @@
       <div>
         <h1>Thirukkural</h1>
         <p>Introduction to Thirukkural</p>
+        <h1>Thirukkural Finder</h1>
+        <label for="kural-number">Enter Kural Number:</label>
+        <input type="number" id="kural-number" placeholder="1-1330">
+        <button id="fetch-kural">Fetch Kural</button>
+    
+        <div id="result" style="margin-top: 20px;">
+            <h3>Kural Details:</h3>
+            <p id="tamil">Tamil: <span></span></p>
+            <p id="english">English: <span></span></p>
+        </div>
+    
+        <!-- JavaScript -->
+        <script src="script.js"></script>
         <div>
           <!--in Tamil-->
         </div>
