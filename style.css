@@ -19,6 +19,85 @@ section {
   margin: 2rem;
 }
 
+button {
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  border: #666;
+  border-radius: 1rem;
+  background-color: #f3ebd6;
+}
+
+#thirukkural-section {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+input {
+  font-family: Arial, sans-serif;
+  padding: 1;
+  width: 25%;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+.submitBtn {
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+
+  background-color: #ffecb3;
+  color: #333;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  display: block;
+  width: 25%;
+}
+
+.submitBtn:hover {
+  background-color: #666;
+}
+
+.bottomDiv {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.kuralDisplay {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.tamilKural,
+.englishKural {
+  width: 48%;
+}
+
+.tamilTitle,
+.englishTitle {
+  font-weight: bold;
+}
+
+.tamilMeaningHeading,
+.englishMeaningHeading {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.tamilline,
+.englishMeaning {
+  margin-top: 5px;
+}
+
 .main-box {
   text-align: left;
   padding: 1rem;
@@ -107,14 +186,6 @@ p {
   background-color: #ffecb3; /* Hintergrundfarbe */
   padding: 5px 10px;
   border-radius: 5px;
-}
-
-.button-style {
-  font-family: Arial, sans-serif;
-  font-size: 1rem;
-  border: #666;
-  border-radius: 1rem;
-  background-color: #f3ebd6;
 }
 
 /* Responsive Schriftgrößen */

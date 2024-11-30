@@ -59,14 +59,24 @@
      <!--Thirukkurral-->
      <section class="main-box">
       <section id="kuralSection">
-        <h1>Thirukkural Finder</h1>
-        <label for="kuralNumberInput">Enter Kural Number:</label>
-        <input type="number" id="kuralNumberInput" placeholder="1-1330">
-        <button id="fetchKuralButton">Fetch Kural</button>
-        <p><strong>Tamil:</strong> <span id="tamilResult">...</span></p>
-        <p><strong>English:</strong> <span id="englishResult">...</span></p>
-      </section>      
-      <script src="script.js"></script>
+        <h3>Thirukkural Finder</h3>
+    
+        <!-- Eingabefeld für die Kural-Nummer -->
+        <input type="number" id="kuralNumberInput" placeholder="Enter Kural Number (1-1330)">
+        <button class="submitBtn">Fetch Kural</button>
+    
+        <!-- Ergebnisbereich für die Ausgabe von Kural-Daten -->
+        <div class="bottomDiv"></div>
+    
+        <!-- Die Bereiche, in denen du Tamil und Englisch anzeigen willst -->
+        <div id="result">
+          <p><strong>Tamil:</strong> <span id="tamilResult">---</span></p>
+          <p><strong>English:</strong> <span id="englishResult">---</span></p>
+        </div>
+      </section>
+    </section>
+    <script src="script.js"></script>
+    
       
      </section>
      <!--Footer-->
