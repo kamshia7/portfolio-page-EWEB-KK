@@ -51,6 +51,8 @@ Hi, my name is Kamshia Kaleendrarajan. I am a part-time student at Bern Universi
    cd portfolio-page-EWEB-KK
    npm install
    npm start
+   npm install express dotenv node-fetch
+   node script_backend.js
    ```
 
 ---

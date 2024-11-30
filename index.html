@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Kamshia Kaleendrarajan</title>
     <link rel="stylesheet" href="style.css" /> <!-- Verlinkt die CSS-Datei -->
-    <script src="script.js"></script>
+
   </head>
   <body>
     <!--Title-->
@@ -58,24 +58,18 @@
      </section>
      <!--Thirukkurral-->
      <section class="main-box">
-      <div>
-        <h2>Thirukkural</h2>
-        <p id="text-box">Introduction to Thirukkural</p>
-        <h3>Thirukkural Finder</h2>
-
+      <section id="kural-section">
+        <h2>Thirukkural Finder</h2>
         <label for="kural-number">Enter Kural Number:</label>
-        <input type="number" id="kural-number" placeholder="1-1330">
+        <input type="number" id="kural-number" placeholder="1-1330" />
         <button id="fetch-kural">Fetch Kural</button>
         <div id="result" style="margin-top: 20px;">
-            <h3>Kural Details:</h3>
-            <p id="text-box">Tamil: <span></span></p>
-            <p id="text-box">English: <span></span></p>
+          <p><strong>Tamil:</strong> <span id="tamil-line"></span></p>
+          <p><strong>English:</strong> <span id="english-translation"></span></p>
         </div>
-    
-        <!-- JavaScript -->
-        <script src="script.js"></script>
-
-      </div>
+      </section>
+      <script src="script.js"></script>
+      
      </section>
      <!--Footer-->
      <footer>
