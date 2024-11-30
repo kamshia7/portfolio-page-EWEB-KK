@@ -1,30 +1,36 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const fetchButton = document.getElementById("fetch-kural");
-  const kuralNumberInput = document.getElementById("kural-number");
-  const tamilResult = document.getElementById("tamil-line");
-  const englishResult = document.getElementById("english-translation");
+document
+  .getElementById("fetchKuralButton")
+  .addEventListener("click", async () => {
+    const numberInput = document.getElementById("kuralNumberInput");
+    const tamilResult = document.getElementById("tamilResult");
+    const englishResult = document.getElementById("englishResult");
 
-  async function fetchKural() {
-    const kuralNumber = kuralNumberInput.value;
+    // Hol dir die eingegebene Kural-Nummer
+    const number = numberInput.value.trim();
 
-    if (!kuralNumber || kuralNumber < 1 || kuralNumber > 1330) {
-      alert("Please enter a valid Kural number (1-1330).");
+    if (!number) {
+      tamilResult.textContent = "Bitte gib eine gültige Kural-Nummer ein.";
+      englishResult.textContent = "";
       return;
     }
 
     try {
-      const response = await fetch(`/api/kural/${kuralNumber}`);
-      if (!response.ok) throw new Error("Failed to fetch Kural.");
+      // Backend-API aufrufen
+      const response = await fetch(`http://localhost:3000/api/kural/${number}`);
+
+      if (!response.ok) {
+        throw new Error("Fehler beim Abrufen der API-Daten.");
+      }
 
       const data = await response.json();
-      tamilResult.textContent = `${data.line1} ${data.line2}`;
-      englishResult.textContent = data.translation;
+
+      // Zeige die Ergebnisse auf der Webseite an
+      tamilResult.textContent = `${data.line1} ${data.line2}`; // Tamilischer Text
+      englishResult.textContent = data.translation; // Englische Übersetzung
     } catch (error) {
       console.error("Error fetching Kural:", error);
-      tamilResult.textContent = "Error fetching the Kural.";
-      englishResult.textContent = "Please try again.";
+      tamilResult.textContent = "Fehler beim Abrufen der Kural-Daten.";
+      englishResult.textContent =
+        "Bitte überprüfe die API und versuche es erneut.";
     }
-  }
-
-  fetchButton.addEventListener("click", fetchKural);
-});
+  });

@@ -1,0 +1,32 @@
+const express = require("express");
+const fetch = require("node-fetch");
+require("dotenv").config();
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+const API_KEY = process.env.KURAL_API_KEY;
+const API_URL = "https://getthirukural.appspot.com/api/3.0/kural/number/";
+
+app.get("/api/kural/:number", async (req, res) => {
+  const number = req.params.number;
+
+  try {
+    const response = await fetch(`${API_URL}${number}`, {
+      headers: {
+        "Authorization": `Bearer ${API_KEY}` // Falls die API dies benötigt
+      }
+    });
+
+    if (!response.ok) throw new Error("Failed to fetch Kural");
+
+    const data = await response.json();
+    res.json(data);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Error fetching Kural" });
+  }
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});

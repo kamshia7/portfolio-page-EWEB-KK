@@ -1,34 +1,35 @@
-require("dotenv").config();
 const express = require("express");
-const fetch = require("node-fetch"); // API-Abfrage
+require("dotenv").config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware, um statische Dateien (HTML, JS, CSS) bereitzustellen
-app.use(express.static("public"));
+app.use(express.static("public")); // Statische Dateien bereitstellen
 
-// API-Abfrage
 app.get("/api/kural/:number", async (req, res) => {
   const number = req.params.number; // Kural-Nummer aus URL
-  const apiKey = process.env.KURAL_API_KEY; // GitHub Secret aus .env
+  const apiKey = process.env.KURAL_API_KEY;
 
   try {
-    const response = await fetch(
-      `https://getthirukural.appspot.com/api/3.0/kural/${number}?appid=${apiKey}&format=json`
-    );
+    const apiURL = `https://getthirukural.appspot.com/api/3.0/kural/${number}?appid=${apiKey}&format=json`;
+
+    console.log("Fetching API for Kural...");
+    console.log("URL:", apiURL);
+
+    const response = await fetch(apiURL);
+    console.log("API Response Status:", response.status);
 
     if (!response.ok) {
-      throw new Error("Fehler bei der API-Abfrage");
+      throw new Error("Failed to fetch API data.");
     }
 
     const data = await response.json();
-    res.json(data); // API-Daten als JSON zurückgeben
+    console.log("API Response Data:", data);
+
+    res.json(data); // API-Daten zurückgeben
   } catch (error) {
-    console.error(error.message);
-    res
-      .status(500)
-      .json({ error: "Interner Fehler beim Abrufen der Kural-Daten" });
+    console.error("Error fetching API:", error.message);
+    res.status(500).json({ error: "Failed to fetch API data." });
   }
 });
 
