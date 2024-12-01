@@ -239,3 +239,71 @@ input {
   border-radius: 16px;
   margin-top: 0;
 }
+
+/* Thirukkural Finder Styles */
+#thirukkural-section {
+  max-width: 600px;
+  margin: 40px auto; /* Zentriert den Abschnitt */
+  padding: 20px;
+  background-color: #f3ebd6; /* Helle Hintergrundfarbe */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sanfter Schatten */
+  text-align: center; /* Zentriert den Text */
+}
+
+#thirukkural-section h2 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ca6969; /* Passend zum Design */
+  margin-bottom: 16px;
+}
+
+#thirukkural-section p {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+#thirukkural-section input {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+#thirukkural-section .submitBtn {
+  font-size: 16px;
+  background-color: #ca6969;
+  color: #f3ebd6;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#thirukkural-section .submitBtn:hover {
+  background-color: #b35858;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #333;
+  text-align: left;
+}
+
+#result p {
+  margin: 8px 0;
+}
+
+#result span {
+  display: block;
+  margin-top: 4px;
+  font-size: 14px;
+}
