@@ -48,45 +48,49 @@
         <div>BSc Wirtschaftsinformatik bei der BFH</div>
       </div>
      </section>
-     <!--API Sections-->
-     <!--Books-->
-     <section>
-      <div>
-        <h1>I love Books!</h1>
-        <p>Here are random suggestions of my favorite genres:</p>
-      </div>
-     </section>
-     <!--Thirukkurral-->
-     <section class="main-box">
-      <section id="kuralSection">
-        <h3>Thirukkural Finder</h3>
+     <!--Interests-->
+     <section id="Interests">
+      <div class="main-container">
     
-        <input type="number" id="kuralNumberInput" placeholder="Enter Kural Number (1-1330)">
-        <button class="submitBtn">Fetch Kural</button>
-    
-        <div class="bottomDiv"></div>
-    
-        <div id="result">
-          <p><strong>Tamil:</strong> <span id="tamilResult">---</span></p>
-          <p><strong>Poem in English:</strong> <span id="englishResult">---</span></p>
-          <p><strong>Meaning:</strong> <span id="englishMeaning">---</span></p>
+        <!-- Thirukkural Finder -->
+        <div class="main-item">
+          <section>
+            <h2>Thirukkural</h2>
+            <p>What are Thirukkural?</p>
+            <h3>Thirukkural Finder</h3>
+            <input type="number" id="kuralNumberInput" placeholder="Enter Kural Number (1-1330)">
+            <button class="submitBtn">Fetch Kural</button>
+            <div id="result">
+              <p><strong>Tamil:</strong>
+                <br><span id="tamilResultLine1"></span></p>
+                <br><span id="tamilResultLine2"></span></p>
+              <p><strong>Poem in English:</strong>
+                <br><span id="englishResult"></span></p>
+              <p><strong>Meaning:</strong>
+                <br><span id="englishMeaning"></span></p>
+            </div>
+          </section>
         </div>
-      </section>
-    </section>
     
+        <!-- Books Section -->
+        <div class="main-item">
+          <h2>I love Books!</h2>
+          <p>Here are random suggestions of my favorite genres:</p>
+        </div>
+    
+      </div>
+    </section>
     
     <script src="script.js"></script>
     
-      
-     </section>
      <!--Footer-->
      <footer>
       <div class="subheading">Contact Me</div>
       <div>
         <!--Logos zu Mail, LinkedIn, GitHub-->
       </div>
-      <div>
-        <p>©2024 Kamshia Kaleendrarajan</p>
+      <div class="copyright">
+        ©2024 Kamshia Kaleendrarajan
       </div>
      </footer>
   </body>

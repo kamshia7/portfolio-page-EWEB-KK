@@ -1,6 +1,7 @@
 // Selektiere die relevanten Elemente
 const submitBtn = document.querySelector(".submitBtn");
-const tamilResult = document.getElementById("tamilResult");
+const tamilResultLine1 = document.getElementById("tamilResultLine1");
+const tamilResultLine2 = document.getElementById("tamilResultLine2");
 const englishResult = document.getElementById("englishResult");
 const englishMeaning = document.getElementById("englishMeaning");
 
@@ -27,7 +28,8 @@ submitBtn.addEventListener("click", async () => {
     console.log("Kural Data:", data);
 
     // Anzeige der originalen Daten
-    tamilResult.textContent = `${data.line1} ${data.line2}`;
+    tamilResultLine1.textContent = `${data.line1}`;
+    tamilResultLine2.textContent = `${data.line2}`;
     englishResult.textContent = data.translation;
     englishMeaning.textContent = data.en;
   } catch (error) {
