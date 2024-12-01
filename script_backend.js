@@ -36,3 +36,7 @@ app.get("/api/kural/:number", async (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Server läuft auf Port ${PORT}`));
+
+// 1. Kostenlose Nutzung der Google Cloud Translation API
+// Google bietet 500.000 Zeichen pro Monat kostenlos. Dies gilt für die ersten 12 Monate, in denen du ein Abrechnungskonto mit der API verbindest.
+// 500.000 Zeichen pro Monat sind in der Regel ausreichend für kleinere Anwendungen, wie z.B. das Übersetzen von Thirukkural oder anderen kurzen Texten.
