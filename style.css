@@ -160,34 +160,6 @@ span {
 /*Header-Section*/
 
 /*Interests-Section*/
-.main-container {
-  align-items: stretch;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(310px, 1fr));
-  gap: 15px;
-  padding: 1px;
-}
-
-.main-item {
-  padding: 1px;
-  background-color: #ca6969;
-  text-align: left;
-  border-radius: 16px;
-  box-sizing: border-box;
-  word-wrap: break-word;
-}
-
-@media (max-width: 1350px) and (min-width: 720px) {
-  .hobbys-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 720px) {
-  .hobbys-container {
-    grid-template-columns: 1fr;
-  }
-}
 
 /*Buttons*/
 button {
@@ -206,25 +178,22 @@ button:hover {
   background-color: #b35858;
 }
 
-/*Thrukkural*/
-
-#result {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 20px;
+/*Interests*/
+.main-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(310px, 1fr));
+  gap: 15px;
+  padding: 1px;
+  align-items: stretch; /* Stellt sicher, dass alle Boxen die gleiche Höhe haben */
 }
 
-input {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  padding: 1%;
-  width: 100%;
-  font-size: 16px;
-  border: none;
-  border-radius: 16px;
-  margin-top: 0;
+.main-container > div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-/* Thirukkural Finder Styles */
-#thirukkural-section {
+.main-item {
   padding: 20px;
   background-color: #ca6969; /* Helle Hintergrundfarbe */
   border-radius: 16px;
@@ -234,6 +203,7 @@ input {
   text-align: left;
 }
 
+/* Thirukkural Finder Styles*/
 #thirukkural-section h2 {
   font-family: "Times New Roman", Times, serif;
   font-size: 24px;
@@ -335,4 +305,16 @@ input {
 .tamilline,
 .englishMeaning {
   margin-top: 5px;
+}
+
+@media (max-width: 1350px) and (min-width: 720px) {
+  .main-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .main-container {
+    grid-template-columns: 1fr;
+  }
 }
