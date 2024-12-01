@@ -1,9 +1,11 @@
 const express = require("express");
 require("dotenv").config();
+const cors = require("cors"); // CORS importieren
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.use(cors()); // CORS aktivieren
 app.use(express.static("public")); // Statische Dateien bereitstellen
 
 app.get("/api/kural/:number", async (req, res) => {
