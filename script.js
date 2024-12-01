@@ -46,9 +46,9 @@ submitBtn.addEventListener("click", async () => {
     console.log("Translated Poem (German):", translatedPoem);
 
     // Anzeige der übersetzten Texte
-    improvedTextField.textContent = `${improvedText}`;
-    translatedPoemField.textContent = `${translatedPoem}`;
-    translatedImprovedTextField.textContent = `${translatedImprovedText}`;
+    improvedTextField.textContent = `Meaning (Improved English): ${improvedText}`;
+    translatedPoemField.textContent = `German (Poem): ${translatedPoem}`;
+    translatedImprovedTextField.textContent = `German (Meaning): ${translatedImprovedText}`;
   } catch (error) {
     console.error("Error fetching Kural:", error);
     alert("Error fetching the Kural. Please try again later.");
@@ -58,23 +58,27 @@ submitBtn.addEventListener("click", async () => {
 // Funktion, um den englischen Text zu verbessern (Verwendung von LibreTranslate API)
 async function improveText(text) {
   try {
-    const response = await fetch("https://libretranslate.de/translate", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        q: text,
-        source: "en",
-        target: "en",
-        format: "text",
-      }),
-    });
+    const response = await fetch(
+      "https://cors-anywhere.herokuapp.com/https://libretranslate.de/translate",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          q: text,
+          source: "en",
+          target: "en",
+          format: "text",
+        }),
+      }
+    );
 
     if (!response.ok)
       throw new Error("Failed to improve text with LibreTranslate API.");
 
     const data = await response.json();
+    console.log("Improved Text Response:", data); // Debugging
     return data.translatedText; // Der verbesserte Text
   } catch (error) {
     console.error("Error improving text:", error);
@@ -85,22 +89,26 @@ async function improveText(text) {
 // Funktion, um den Text ins Deutsche zu übersetzen (Verwendung von LibreTranslate API)
 async function translateToGerman(text) {
   try {
-    const response = await fetch("https://libretranslate.de/translate", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        q: text,
-        source: "en",
-        target: "de",
-        format: "text",
-      }),
-    });
+    const response = await fetch(
+      "https://cors-anywhere.herokuapp.com/https://libretranslate.de/translate",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          q: text,
+          source: "en",
+          target: "de", // Sicherstellen, dass hier "de" für Deutsch verwendet wird
+          format: "text",
+        }),
+      }
+    );
 
     if (!response.ok) throw new Error("Failed to translate text to German.");
 
     const data = await response.json();
+    console.log("German Translation Response:", data); // Debugging
     return data.translatedText; // Der übersetzte Text ins Deutsche
   } catch (error) {
     console.error("Error translating text:", error);
