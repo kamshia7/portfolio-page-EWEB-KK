@@ -21,7 +21,7 @@ btn.addEventListener("click", (event) => {
 
         // Antwort von der API
         let data = await response.json();
-        console.log(data);
+        console.log(data); // Logge die Daten, um zu prüfen, ob sie korrekt empfangen wurden
 
         // Setze Tamil- und Englisch-Daten in den vorgesehenen Bereich
         tamilResult.textContent = `${data.line1} ${data.line2}`;
@@ -48,7 +48,7 @@ btn.addEventListener("click", (event) => {
                     </div>
                 `;
       } catch (error) {
-        console.log(error);
+        console.log("Error fetching data:", error); // Logge den Fehler, falls etwas schiefgeht
       }
     };
 
