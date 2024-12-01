@@ -161,6 +161,7 @@ span {
 
 /*Interests-Section*/
 .main-container {
+  align-items: stretch;
   display: grid;
   grid-template-columns: repeat(2, minmax(310px, 1fr));
   gap: 15px;
@@ -194,33 +195,15 @@ button {
   font-size: 16px;
   background-color: #f3ebd6;
   color: #333;
-  padding: 3px 20px; /* Innenabstand */
-  border: none; /* Keine Umrandung */
-  border-radius: 16px; /* Abgerundete Ecken */
-  cursor: pointer; /* Mauszeiger als Hand */
-  transition: background-color 0.3s ease; /* Sanfte Übergang beim Hover */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #666;
-}
-
-.submitBtn {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 16px;
-
-  background-color: #f3ebd6;
-  color: #333;
-  padding: 3px 20px;
-  border: none;
-  border-radius: 16px;
-  cursor: pointer;
-  display: block;
-  margin-top: 10px;
-}
-
-.submitBtn:hover {
-  background-color: #666;
+  background-color: #b35858;
 }
 
 /*Thrukkural*/
@@ -242,20 +225,20 @@ input {
 
 /* Thirukkural Finder Styles */
 #thirukkural-section {
-  max-width: 600px;
-  margin: 40px auto; /* Zentriert den Abschnitt */
   padding: 20px;
-  background-color: #f3ebd6; /* Helle Hintergrundfarbe */
-  border-radius: 12px;
+  background-color: #ca6969; /* Helle Hintergrundfarbe */
+  border-radius: 16px;
+  box-sizing: border-box;
+  word-wrap: break-word;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sanfter Schatten */
-  text-align: center; /* Zentriert den Text */
+  text-align: left;
 }
 
 #thirukkural-section h2 {
   font-family: "Times New Roman", Times, serif;
   font-size: 24px;
   font-weight: bold;
-  color: #ca6969; /* Passend zum Design */
+  color: #f3ebd6; /* Passend zum Design */
   margin-bottom: 16px;
 }
 
@@ -278,8 +261,8 @@ input {
 
 #thirukkural-section .submitBtn {
   font-size: 16px;
-  background-color: #ca6969;
-  color: #f3ebd6;
+  background-color: #f3ebd6;
+  color: #333;
   padding: 10px 20px;
   border: none;
   border-radius: 8px;
@@ -293,17 +276,63 @@ input {
 
 #result {
   margin-top: 20px;
-  font-size: 16px;
-  color: #333;
-  text-align: left;
+  font-size: 18px;
 }
 
 #result p {
-  margin: 8px 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+
+  margin: 10px 0; /*Abstand zwischen den Absätzen */
+
+  line-height: 1.5; /* Zeilenabstand für bessere Lesbarkeit */
+  word-wrap: break-word; /* Zeilenumbruch bei langen Wörtern */
 }
 
 #result span {
-  display: block;
-  margin-top: 4px;
-  font-size: 14px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 16px;
+  margin-top: 10px; /* Abstand zwischen den Texten vorher 5px*/
+  font-weight: normal; /* Normale Schriftart für Inhalte */
+  word-wrap: break-word; /* Ermöglicht Umbrüche, wenn der Text zu lang ist */
+  overflow-wrap: break-word; /* Falls notwendig, überschüssige Wörter umbrechen */
+  white-space: normal; /* Verhindert, dass der Text in einer Zeile bleibt */
+}
+
+.bottomDiv {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+/* Flexbox-Anordnung der Kural-Text-Container */
+.kuralDisplay {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  flex-wrap: wrap; /* Stellt sicher, dass sich die Boxen umbrechen, wenn der Platz nicht ausreicht */
+}
+
+.tamilKural,
+.englishKural {
+  width: 48%;
+  margin-bottom: 20px; /* Abstand zwischen den Elementen */
+  word-wrap: break-word; /* Ermöglicht Umbrüche bei langen Wörtern */
+}
+
+.tamilTitle,
+.englishTitle {
+  font-weight: bold;
+}
+
+.tamilMeaningHeading,
+.englishMeaningHeading {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.tamilline,
+.englishMeaning {
+  margin-top: 5px;
 }
