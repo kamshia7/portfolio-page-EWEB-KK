@@ -1,0 +1,27 @@
+name: Deploy Thirukkural Finder
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Code aus dem Repository klonen
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # Platzhalter im Code durch GitHub Secret ersetzen
+      - name: Replace API Key in script.js
+        run: |
+          sed -i 's/YOUR_API_KEY/${{ secrets.KURAL_API_KEY }}/g' script.js
+
+      # Website bereitstellen (z. B. GitHub Pages oder Vercel)
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public

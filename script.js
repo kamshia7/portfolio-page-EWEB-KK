@@ -5,6 +5,9 @@ const tamilResultLine2 = document.getElementById("tamilResultLine2");
 const englishResult = document.getElementById("englishResult");
 const englishMeaning = document.getElementById("englishMeaning");
 
+// API-Key-Platzhalter, wird durch GitHub Actions ersetzt
+const KURAL_API_KEY = "YOUR_API_KEY";
+
 // Event-Listener für den Button
 submitBtn.addEventListener("click", async () => {
   const inputNumber = document.getElementById("kuralNumberInput").value;
@@ -16,10 +19,10 @@ submitBtn.addEventListener("click", async () => {
   }
 
   try {
-    // API-Aufruf für das Kural
-    const response = await fetch(
-      `http://localhost:3000/api/kural/${inputNumber}` //dynamisch machen und nicht localhost
-    );
+    // Direkter API-Aufruf für das Kural
+    const apiURL = `https://getthirukural.appspot.com/api/3.0/kural/${inputNumber}?appid=${KURAL_API_KEY}&format=json`;
+
+    const response = await fetch(apiURL);
     if (!response.ok) throw new Error("Fehler beim Abrufen der Kural-Daten.");
 
     const data = await response.json();
