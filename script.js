@@ -18,7 +18,7 @@ submitBtn.addEventListener("click", async () => {
   try {
     // API-Aufruf für das Kural
     const response = await fetch(
-      `http://localhost:3000/api/kural/${inputNumber}`
+      `http://localhost:3000/api/kural/${inputNumber}` //dynamisch machen und nicht localhost
     );
     if (!response.ok) throw new Error("Fehler beim Abrufen der Kural-Daten.");
 
