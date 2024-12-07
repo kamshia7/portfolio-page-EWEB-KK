@@ -25,7 +25,7 @@ Hi, my name is Kamshia Kaleendrarajan. I am a part-time student at Bern Universi
 
 ### 🎓 Technologies & Skills
 
-- **Programmiersprachen**: Python, HTML, CSS
+- **Programmiersprachen**: Python
 - **Frameworks**: IREB
 - **Design-Tools**: Figma
 - **Weitere**: Git, SQL
