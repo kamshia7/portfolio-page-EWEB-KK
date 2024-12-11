@@ -319,6 +319,7 @@ button:hover {
   }
 }
 
+/* Dog-Stil*/
 #dogs-section h2 {
   font-family: "Times New Roman", Times, serif;
   font-size: 24px;
@@ -359,4 +360,16 @@ button:hover {
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+  .main-item {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  #fetch-btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
 }

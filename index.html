@@ -59,36 +59,34 @@
         <p>Enter a number to find the corresponding Thirukkural (1-1330):</p>
         <input type="number" id="kuralNumberInput" placeholder="Enter Kural Number (1-1330)">
         <button class="submitBtn">Fetch Kural</button>
-        
-        <div id="result">
-          <p><strong>Tamil:</strong>
-            <br><span id="tamilResultLine1"></span>
-            <br><span id="tamilResultLine2"></span>
-          </p>
-          <p><strong>Poem in English:</strong>
-            <br><span id="englishResult"></span>
-          </p>
-          <p><strong>Meaning:</strong>
-            <br><span id="englishMeaning"></span>
-          </p>
+
+        <!-- Ausgabe -->
+        <div id="results">
+          <p><strong>Tamil:</strong> 
+            <span id="tamil-line1"></span>
+            <span id="tamil-line2"></span></p>
+          <p><strong>English Translation:</strong> <span id="english-translation"></span></p>
+          <p><strong>English Meaning:</strong> <span id="english-meaning"></span></p>
         </div>
       </section>
     </div>
 
-<script src="script.js"></script>
+<script src="kural_script.js"></script>
 
-    <!-- Books Section -->
-    <div class="main-item">
-      <section id="dogs-section">
-        <h2>I love Dogs!</h2>
-        <p>This is a random Image Viewer</p>
-        <button id="fetch-btn" title="Load new Picture">Load new picture</button>
-        <div id="dog-container" aria-live="polite">
-          <img id="dog-image" src="" alt="Random Dog Image" />
-        </div>
-      </section>
+<!-- Dogs Section -->
+<div class="main-item">
+  <section id="dogs-section">
+    <h2>I love Dogs!</h2>
+    <p>blabala Dogs are the most loyal friend of the human being. I'm a dog lover and own one myself🐕</p>
+    <p>This is a random Image Viewer</p>
+    <button id="fetch-btn" title="Load a new dog picture">Load new picture</button>
+    <div id="dog-container" aria-live="polite" aria-atomic="true">
+      <img id="dog-image" src="" alt="A random image of a dog" />
     </div>
-    <script src="dogspicture_script.js"></script>
+  </section>
+</div>
+<script src="dogspicture_script.js"></script>
+
   </div>
 </section>
 
