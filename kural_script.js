@@ -1,43 +1,38 @@
-// Funktion, um das Thirukkural basierend auf der eingegebenen Nummer zu laden
-async function fetchThirukkural() {
-  const kuralNumber = document.getElementById("kuralNumberInput").value;
+document
+  .getElementById("getKuralButton")
+  .addEventListener("click", fetchRandomKural);
 
-  if (!kuralNumber || kuralNumber < 1 || kuralNumber > 1330) {
-    alert("Bitte gib eine Nummer zwischen 1 und 1330 ein.");
-    return;
-  }
-
-  // API-URL mit App ID und Parameter für JSON-Antwort
-  const apiKey = process.env.KURAL_API_KEY;
-  const apiUrl = `https://getthirukkural.appspot.com/api/3.0/kural/${kuralNumber}?appid=${apiKey}&format=json`;
+async function fetchRandomKural() {
+  const apiKey = process.env.KURAL_API_KEY; // Setze den API-Schlüssel als Umgebungsvariable
+  const url =
+    "https://getthirukkural.appspot.com/kural?number=" +
+    Math.floor(Math.random() * 1330) +
+    1; // Zufällige Kural-Nummer von 1 bis 1330
 
   try {
-    // Anfrage an die API senden
-    const response = await fetch(apiUrl);
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+      },
+    });
 
     if (!response.ok) {
-      throw new Error("Fehler beim Abrufen der Daten.");
+      throw new Error("Fehler beim Abrufen der Kural-Daten");
     }
 
-    // Antwort als JSON umwandeln
-    const kuralData = await response.json();
+    const data = await response.json();
 
-    // Ergebnisse anzeigen
-    document.getElementById("tamil-line1").innerText =
-      kuralData.kural.line1 || "N/A";
-    document.getElementById("tamil-line2").innerText =
-      kuralData.kural.line2 || "N/A";
-    document.getElementById("english-translation").innerText =
-      kuralData.kural.eng || "N/A";
-    document.getElementById("english-meaning").innerText =
-      kuralData.kural.eng_exp || "N/A";
+    // Kural-Daten auf der Seite anzeigen
+    document.getElementById("kuralNumber").innerText = data.number;
+    document.getElementById(
+      "kuralTamil"
+    ).innerText = `${data.line1} - ${data.line2}`;
+    document.getElementById("kuralTranslation").innerText = data.translation;
+    document.getElementById("kuralMeaning").innerText =
+      data.urai1 + " | " + data.urai2 + " | " + data.urai3;
   } catch (error) {
-    console.error("Fehler:", error);
-    alert("Etwas ist schief gelaufen. Bitte versuche es später erneut.");
+    console.error("Fehler beim Abrufen des Thirukkural:", error);
+    alert("Es gab einen Fehler beim Abrufen des Thirukkural.");
   }
 }
-
-// Event-Listener: Führt die Funktion aus, wenn der Button geklickt wird
-document
-  .querySelector(".submitBtn")
-  .addEventListener("click", fetchThirukkural);
