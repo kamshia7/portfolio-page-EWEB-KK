@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function fetchRandomKural() {
     const apiKey = KURAL_API_KEY; // Setze den API-Schlüssel als Umgebungsvariable
     const url =
-      "https://getthirukkural.appspot.com/kural?number=" +
+      "https://getthirukkural.appspot.com/api/3.0/kural/{number}?appid={appid}&format={format}&jsoncallback={callbackfunction}" +
       Math.floor(Math.random() * 1330) +
       1; // Zufällige Kural-Nummer von 1 bis 1330
 
