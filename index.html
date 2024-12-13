@@ -4,37 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Kamshia Kaleendrarajan</title>
-    <link rel="stylesheet" href="style.css"> <!-- Verlinkt die CSS-Datei -->
-
+    <link rel="stylesheet" href="style.css" />
+    <!-- Verlinkt die CSS-Datei -->
   </head>
   <body>
     <!--Title-->
-    <header>
+    <header class="header-container">
+      <div class="header-image-left">
+        <div class="oval">
+          <img
+            src="PortfolioPage_Picture_bearbeitet.jpg"
+            alt="Picture of Kamshia"
+            title="Kamshia Kaleendrarajan"
+            class="responsive-img"
+          />
+        </div>
+      </div>
       <div class="header-title">Hi, I'm Kamshia 🤗</div>
-        <div></div>
-        <div class="responsive-img">
-          <div class="oval">
-            <img
-              src="PortfolioPage_Picture_bearbeitet.jpg"
-              alt="Picture of Kamshia"
-              title="Kamshia Kaleendrarajan"
-              class="responsive-img"
-            />
-          </div>
-          <div>
-            <button class="button-style">Contact me</button>
-            <button class="button-style">Hire me</button>
-          </div>
-        </header>
+      <div class="header-image-right">
+        </div>
+      </div>
+      <div class="header-image-left">
+      <div class="header-buttons">
+        <button class="button-style">Contact me</button>
+        <button class="button-style">Hire me</button>
+      </div>
+    </div>
+    </header>
     <!--About Me-->
     <section>
       <div>
         <h1>About me</h1>
-        <p>Hi, my name is Kamshia Kaleendrarajan. I am a part-time student at Bern University for Applied Science (BFH), currently, pursuing a BSc in Business IT. I'm passionate about learning new skills and applying them to exciting projects.</p>
+        <p>
+          Hi, my name is Kamshia Kaleendrarajan. I am a part-time student at
+          Bern University for Applied Science (BFH), currently, pursuing a BSc
+          in Business IT. I'm passionate about learning new skills and applying
+          them to exciting projects.
+        </p>
       </div>
     </section>
     <!-- My Career and Education-->
-     <section>
+    <section>
       <div>
         <div><h1>My Career Path</h1></div>
         <div>Praktikum</div>
@@ -47,71 +57,111 @@
         <div>BSc BWL an der ZHAW</div>
         <div>BSc Wirtschaftsinformatik bei der BFH</div>
       </div>
-     </section>
-     <!-- Interests -->
-<section id="Interests">
-  <div class="main-container">
+    </section>
+    <!-- Interests -->
+    <section id="Interests">
+      <div class="interest-container">
+        <!-- Thirukkural Finder -->
+        <div class="interest-item">
+          <section id="thirukkural-section">
+            <h2>Thirukkural</h2>
+            <p>blabla... what are Thirukkural</p>
+            <p>This is a random Thirukkural Generator</p>
+            <button id="fetch-kural-btn">Load new Kural</button>
 
-    <!-- Thirukkural Finder -->
-    <div class="main-item">
-      <section id="thirukkural-section">
-        <h2>Thirukkural</h2>
-        <p>blabla... what are Thirukkural</p>
-        <p>This is a random Thirukkural Generator</p>
-        <button id="fetch-kural-btn">Load new Kural</button>
-  
-        <div id="kuralDisplay">
-          <p><strong>Nummer:</strong> <span id="kuralNumber"></span></p>
-          <p><strong>Thirukkural (Tamil):</strong> <span id="kuralTamil"></span></p>
-          <p><strong>Übersetzung (Englisch):</strong> <span id="kuralTranslation"></span></p>
-          <p><strong>Bedeutung (Englisch):</strong> <span id="kuralMeaning"></span></p>
+            <div id="kuralDisplay">
+              <p><strong>Nummer:</strong> <span id="kuralNumber"></span></p>
+              <p>
+                <strong>Thirukkural (Tamil):</strong>
+                <span id="kuralTamil"></span>
+              </p>
+              <p>
+                <strong>Übersetzung (Englisch):</strong>
+                <span id="kuralTranslation"></span>
+              </p>
+              <p>
+                <strong>Bedeutung (Englisch):</strong>
+                <span id="kuralMeaning"></span>
+              </p>
+            </div>
+
+            <script src="kural_script.js"></script>
+          </section>
         </div>
-  
-      <script src="kural_script.js"></script>
-      </section>
-    </div>
 
-<script src="kural_script.js"></script>
+        <script src="kural_script.js"></script>
 
-<!-- Dogs Section -->
-<div class="main-item">
-  <section id="dogs-section">
-    <h2>I love Dogs!</h2>
-    <p>blabala Dogs are the most loyal friend of the human being. I'm a dog lover and own one myself🐕</p>
-    <p>This is a random Image Viewer</p>
-    <button id="fetch-btn" title="Load a new dog picture">Load new picture</button>
-    <div id="dog-container" aria-live="polite" aria-atomic="true">
-      <img id="dog-image" src="" alt="A random image of a dog" />
-    </div>
-  </section>
-</div>
-<script src="dogspicture_script.js"></script>
+        <!-- Dogs Section -->
+        <div class="interest-item">
+          <section id="dogs-section">
+            <h2>I love Dogs!</h2>
+            <p>
+              blabala Dogs are the most loyal friend of the human being. I'm a
+              dog lover and own one myself🐕
+            </p>
+            <p>This is a random Image Viewer</p>
+            <button id="fetch-btn" title="Load a new dog picture">
+              Load new picture
+            </button>
+            <div id="dog-container" aria-live="polite" aria-atomic="true">
+              <img id="dog-image" src="" alt="A random image of a dog" />
+            </div>
+          </section>
+        </div>
+        <script src="dogspicture_script.js"></script>
 
-<!--Spotify-->
-  <div class="main-item">
-    <section id="spotify-section">
-      <h2>My Music Preferences</h2>
-      <p>For work, to study, or just for entertainment - I enjoy to listen to music. My music preferences are lofi for concentration and Tamil movie-songs for chill-time!</p>
-      <p>Here are some playlists I like to listen to:</p>
-      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7gTK5QkHcif71uzumVCpWz?utm_source=generator&theme=0" width="100%" height="142" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1Fs3FVN9gq7nYcB7JsiV4D?utm_source=generator&theme=0" width="100%" height="142" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/471N195f5jAVs086lzYglw?utm_source=generator&theme=0" width="100%" height="142" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <!--Spotify-->
+        <div class="interest-item">
+          <section id="spotify-section">
+            <h2>My Music Preferences</h2>
+            <p>
+              For work, to study, or just for entertainment - I enjoy to listen
+              to music. My music preferences are lofi for concentration and
+              Tamil movie-songs for chill-time!
+            </p>
+            <p>Here are some playlists I like to listen to:</p>
+            <iframe
+              style="border-radius: 12px"
+              src="https://open.spotify.com/embed/playlist/7gTK5QkHcif71uzumVCpWz?utm_source=generator&theme=0"
+              width="100%"
+              height="142"
+              frameborder="0"
+              allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            ></iframe>
+            <iframe
+              style="border-radius: 12px"
+              src="https://open.spotify.com/embed/playlist/1Fs3FVN9gq7nYcB7JsiV4D?utm_source=generator&theme=0"
+              width="100%"
+              height="142"
+              frameborder="0"
+              allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            ></iframe>
+            <iframe
+              style="border-radius: 12px"
+              src="https://open.spotify.com/embed/playlist/471N195f5jAVs086lzYglw?utm_source=generator&theme=0"
+              width="100%"
+              height="142"
+              frameborder="0"
+              allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            ></iframe>
+          </section>
+        </div>
+      </div>
     </section>
 
-  </div>
-
-  </div>
-</section>
-
-     <!--Footer-->
-     <footer>
+    <!--Footer-->
+    <footer>
       <div class="subheading">Contact Me</div>
       <div>
         <!--Logos zu Mail, LinkedIn, GitHub-->
       </div>
-      <div class="copyright">
-        ©2024 Kamshia Kaleendrarajan
-      </div>
-     </footer>
+      <div class="copyright">©2024 Kamshia Kaleendrarajan</div>
+    </footer>
   </body>
 </html>
