@@ -50,9 +50,6 @@ Hi, my name is Kamshia Kaleendrarajan. I am a part-time student at Bern Universi
    git clone https://github.com/kamshia7/portfolio-page-EWEB-KK.git
    cd portfolio-page-EWEB-KK
    npm install
-   npm start
-   npm install express dotenv node-fetch
-   node script_backend.js
    ```
 
 ---
