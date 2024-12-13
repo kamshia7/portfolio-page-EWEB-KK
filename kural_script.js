@@ -1,22 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Funktion zum Abrufen des Thirukkurals
   async function fetchRandomKural() {
-    const apiKey = KURAL_API_KEY; // Setze den API-Schlüssel als Umgebungsvariable
-    const url =
-      "https://getthirukkural.appspot.com/api/3.0/kural/{number}?appid={appid}&format={format}&jsoncallback={callbackfunction}" +
-      Math.floor(Math.random() * 1330) +
-      1; // Zufällige Kural-Nummer von 1 bis 1330
+    const randomNumber = Math.floor(Math.random() * 1330) + 1; // Zufällige Kural-Nummer (1-1330)
+
+    const url = `https://getthirukkural.appspot.com/api/3.0/kural/${randomNumber}?appid=${KURAL_API_KEY}&format=json`;
 
     try {
       const response = await fetch(url, {
         method: "GET",
         headers: {
-          Authorization: `Bearer ${apiKey}`,
+          Authorization: `Bearer ${KURAL_API_KEY}`, // Falls der API-Aufruf eine Authentifizierung erfordert
         },
       });
 
       if (!response.ok) {
-        throw new Error("Error when retrieving the Kural data");
+        throw new Error("Fehler beim Abrufen der Kural-Daten");
       }
 
       const data = await response.json();
@@ -29,8 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("kuralTranslation").innerText = data.translation;
       document.getElementById("kuralMeaning").innerText = data.eng;
     } catch (error) {
-      console.error("Error when retrieving the Kural data:", error);
-      alert("There was an error when retrieving the Kural data.");
+      console.error("Fehler beim Abrufen der Kural-Daten:", error);
+      alert("Es gab einen Fehler beim Abrufen der Kural-Daten.");
     }
   }
 
