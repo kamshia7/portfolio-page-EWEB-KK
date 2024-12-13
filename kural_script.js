@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "kuralTamil"
       ).innerText = `${data.line1} - ${data.line2}`;
       document.getElementById("kuralTranslation").innerText = data.translation;
-      document.getElementById("kuralMeaning").innerText = data.eng;
+      document.getElementById("kuralMeaning").innerText = data.en;
     } catch (error) {
       console.error("Fehler beim Abrufen der Kural-Daten:", error);
       alert("Es gab einen Fehler beim Abrufen der Kural-Daten.");
