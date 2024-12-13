@@ -20,9 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Kural-Daten auf der Seite anzeigen
       document.getElementById("kuralNumber").innerText = data.number;
-      document.getElementById(
-        "kuralTamil"
-      ).innerText = `${data.line1} - ${data.line2}`;
+      document.getElementById("kuralTamil_1").innerText = `${data.line1}`;
+      document.getElementById("kuralTamil_2").innerText = `${data.line2}`;
       document.getElementById("kuralTranslation").innerText = data.translation;
       document.getElementById("kuralMeaning").innerText = data.en;
     } catch (error) {
